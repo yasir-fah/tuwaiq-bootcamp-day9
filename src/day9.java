@@ -85,27 +85,16 @@ public class day9 {
          */// 1-inputMissMatch
         System.out.println("------------ exercise number 3 ------------");
 
-        try{
+
 
             System.out.println("Enter the Radius of the Circle");
             double radius = input.nextDouble();
 
-            /// created method for handle minus number:
-            checkIsMinus(radius);
-
-            System.out.println("Perimeter is: "+(2 *radius)*(Math.PI));
-            System.out.println("Area is: "+ (Math.PI* Math.pow(radius, 2)));
-
-        }catch(InputMismatchException e){
-            System.out.println("Invalid number, please try again...");
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-        finally{
-            System.out.println("end of question 3");
-            input.nextLine();
-        }
-
+            /// created for handle minus number ' in the method ' (outside the main):
+            if(checkMinus2(radius)){
+                System.out.println("Perimeter is: "+(2 *radius)*(Math.PI));
+                System.out.println("Area is: "+ (Math.PI* Math.pow(radius, 2)));
+            }
 
 
 
@@ -621,6 +610,23 @@ public class day9 {
 
         if(word.isEmpty()){
             throw new Exception("please enter a non-empty string");
+        }
+
+    }
+
+    /// handle inside the method for question 3
+    public static boolean checkMinus2(double number) {
+
+        try{
+            if(number < 0) {
+                throw new Exception("you can't add a minus number");
+            }
+            return true;
+        }catch(Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }finally {
+            System.out.println("end of program");
         }
 
     }
