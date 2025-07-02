@@ -597,7 +597,7 @@ public class day9 {
 
 
 
-    /// method for question 3:-
+    /// method for question 10:-
     public static void checkIsMinus(double number)throws Exception{
         if(number < 0 ){
             throw new Exception("you can't enter a negative number");
